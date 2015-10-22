@@ -1,0 +1,33 @@
+@if $o-type-scaffold and not $o-type-is-silent {
+
+	// Base
+
+	html {
+		font-family: o-type-font-family(sans-serif-default);
+		font-size: $o-type-font-size-base;
+	}
+
+	// Links
+
+	a {
+		@include o-type-font(link);
+
+		&:hover,
+		&:active,
+		&:focus {
+			@include o-type-font(link, hover);
+		}
+	}
+
+	// Labels
+
+	label {
+		@include o-type-font(label);
+	}
+
+	// Body copy
+
+	p {
+		@include o-type-font(copy);
+	}
+}

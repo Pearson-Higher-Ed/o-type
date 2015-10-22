@@ -3,6 +3,92 @@
 /// @link https://origami.pearsoned.com/registry/components/o-type
 ////
 
-/// Silent mode
-/// @type Bool
-$o-type-is-silent: true !default;
+// Silent mode
+$o-type-is-silent: false !default;
+
+// If true, default UA styles will be overridden
+$o-type-scaffold: true !default;
+
+$o-type-font-familes: (
+	sans-serif-default: ('Helvetica Neue', Helvetica Arial, sans-serif)
+);
+
+$o-type-font-size-base: 16px;
+
+// Links
+$o-type-link-font-props: (
+	default: (
+		all: (color: #0d65a6, text-decoration: underline)
+	),
+	hover: (
+		all: (color: #094877, text-decoration: none)
+	),
+	active: (
+		all: (color: #094877, text-decoration: none)
+	),
+	focus: (
+		all: (color: #094877, text-decoration: none)
+	)
+);
+
+// Titles
+$o-type-title-font-props: (
+	default: (
+		all: (font-weight: bold),
+		xs: (font-size: 1.375rem, line-height: 1.75rem),
+		sm: (font-size: 1.125rem, line-height: 1.375rem)
+	),
+	large: (
+		xs: (font-size: 1.5rem, line-height: 1.875rem),
+		sm: (font-size: 1.25rem, line-height: 1.5rem)
+	),
+	extra-large: (
+		xs: (font-size: 1.875rem, line-height: 2.25rem),
+		sm: (font-size: 1.375rem, line-height: 1.75rem)
+	)
+);
+
+// Labels
+$o-type-label-font-props: (
+	default: (
+		all: (font-weight: normal, font-size: 0.875rem, line-height: 1rem)
+	),
+	small: (
+		all: (font-size: 0.8125rem, line-height: 0.9375rem)
+	),
+	large: (
+		all: (font-size: 1rem, line-height: 1.125rem)
+	),
+	bold: (
+		all: (font-weight: bold, font-size: 0.875rem, line-height: 1rem)
+	),
+	secondary: (
+		all: (color: #676767)
+	)
+);
+
+// Leads
+$o-type-lead-font-props: (
+	default: (
+		all: (color: #231f20, font-weight: 200, font-size: 1.25rem, line-height: 1.75rem)
+	),
+	small: (
+		all: (font-size: 1.125rem, line-height: 1.5rem)
+	)
+);
+
+// Copy
+$o-type-copy-font-props: (
+	default: (
+		all: (color: #231f20, font-size: 1rem, line-height: 1.375rem)
+	)
+);
+
+// All font properties
+$o-type-font-props: (
+	link: $o-type-link-font-props,
+	title: $o-type-title-font-props,
+	label: $o-type-label-font-props,
+	lead: $o-type-lead-font-props,
+	copy: $o-type-copy-font-props
+);

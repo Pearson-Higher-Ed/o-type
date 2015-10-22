@@ -1,0 +1,22 @@
+@mixin o-type-make-selector($element, $modifier) {
+	$_states: (hover, focus, active, visited);
+	$_modifier-formatted: null;
+
+	@if index($_states, $modifier) {
+		$_modifier-formatted: ":#{$modifier}";
+	} @else {
+		$_modifier-formatted: if($modifier != default, --#{$modifier}, null);
+	}
+
+	.o-type__#{$element}#{$_modifier-formatted} {
+		@include o-type-font($element, $modifier);
+	}
+}
+
+@if not $o-type-is-silent {
+	@each $_element, $_props-map in $o-type-font-props {
+		@each $_modifier, $_props in $_props-map {
+			@include o-type-make-selector($_element, $_modifier);
+		}
+	}
+}

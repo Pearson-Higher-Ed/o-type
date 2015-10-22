@@ -16,9 +16,9 @@ module.exports = {
 			description: 'Labels'
 		},
 		{
-			name: 'lead',
-			template: 'demos/src/lead.mustache',
-			description: 'Lead'
+			name: 'leads',
+			template: 'demos/src/leads.mustache',
+			description: 'Leads'
 		},
 		{
 			name: 'copy',

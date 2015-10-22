@@ -6,9 +6,34 @@
     "supportStatus": "active",
     "demos": [
         {
-            "path": "/demos/demo.html",
+            "path": "/demos/titles.html",
             "expanded": true,
-            "description": "Basic typography"
+            "description": "Titles"
+        },
+        {
+            "path": "/demos/labels.html",
+            "expanded": true,
+            "description": "Labels"
+        },
+        {
+            "path": "/demos/leads.html",
+            "expanded": true,
+            "description": "Leads"
+        },
+        {
+            "path": "/demos/copy.html",
+            "expanded": true,
+            "description": "Body copy"
+        },
+        {
+            "path": "/demos/inline.html",
+            "expanded": true,
+            "description": "Inline text elements"
+        },
+        {
+            "path": "/demos/links.html",
+            "expanded": true,
+            "description": "Links"
         }
     ]
 }

@@ -1,0 +1,37 @@
+@function o-type-font-family($family) {
+	@return map-get($o-type-font-familes, $family);
+}
+
+@mixin o-type-font($element, $modifier: default) {
+	$element: map-get($o-type-font-props, $element);
+	$_font-props: map-get($element, $modifier);
+	$_shared-props: ();
+	$_is-responsive: true;
+
+	@if map-has-key($_font-props, all) and length(map-keys($_font-props)) == 1 {
+		$_is-responsive: false;
+	}
+
+	@each $_breakpoint, $_props in $_font-props {
+		@if $_breakpoint == all {
+			$_shared-props: $_props;
+
+			@if not $_is-responsive {
+				@include o-type-font-props($_props);
+			}
+		} @else if $_breakpoint == xs {
+			$_props: map-merge($_shared-props, $_props);
+			@include o-type-font-props($_props);
+		} @else {
+			@include o-responsive-breakpoint($_breakpoint) {
+				@include o-type-font-props($_props);
+			}
+		}
+	}
+}
+
+@mixin o-type-font-props($props) {
+	@each $_prop, $_value in $props {
+		#{$_prop}: $_value;
+	}
+}

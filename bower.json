@@ -1,6 +1,8 @@
 {
   "name": "o-type",
-  "dependencies": {},
+  "dependencies": {
+    "o-responsive": "~1.0.0-beta"
+  },
   "main": [
     "main.scss"
   ],
