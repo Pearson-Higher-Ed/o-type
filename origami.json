@@ -1,0 +1,14 @@
+{
+    "description": "Typography",
+    "origamiType": "module",
+    "origamiVersion": 1,
+    "support": "https://github.com/Pearson-Higher-Ed/o-type/issues",
+    "supportStatus": "active",
+    "demos": [
+        {
+            "path": "/demos/demo.html",
+            "expanded": true,
+            "description": "Basic typography"
+        }
+    ]
+}

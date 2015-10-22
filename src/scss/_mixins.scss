@@ -1,0 +1,13 @@
+////
+/// @group o-type
+/// @link https://origami.pearsoned.com/registry/components/o-type
+////
+
+/// Hello world
+///
+/// @param {String} $who [world]
+@mixin oTypeHello($who: world) {
+	.foo {
+		content: 'Hello, #{$who}!';
+	}
+}
