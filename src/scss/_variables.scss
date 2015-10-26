@@ -13,7 +13,16 @@ $o-type-font-familes: (
 	sans-serif-default: ('Helvetica Neue', Helvetica Arial, sans-serif)
 );
 
-$o-type-font-size-base: 16px;
+$o-type-font-size-base: 16px !default;
+$o-type-font-size-default: 0.875rem !default;
+$o-type-font-size-sm: 0.8125rem !default;
+$o-type-font-size-lg: 1rem !default;
+
+$o-type-text-color: #000000 !default;
+$o-type-text-color-inverse: #ffffff !default;
+$o-type-secondary-text-color: #676767 !default;
+$o-type-secondary-text-color-inverse: #aeaeae !default;
+
 
 // Links
 $o-type-link-font-props: (
@@ -34,7 +43,7 @@ $o-type-link-font-props: (
 // Titles
 $o-type-title-font-props: (
 	default: (
-		all: (font-weight: bold),
+		all: (color: $o-type-text-color, font-weight: bold),
 		xs: (font-size: 1.375rem, line-height: 1.75rem),
 		sm: (font-size: 1.125rem, line-height: 1.375rem)
 	),
@@ -51,19 +60,19 @@ $o-type-title-font-props: (
 // Labels
 $o-type-label-font-props: (
 	default: (
-		all: (font-weight: normal, font-size: 0.875rem, line-height: 1rem)
+		all: (color: $o-type-text-color, font-weight: normal, font-size: $o-type-font-size-default, line-height: 1rem)
 	),
 	small: (
-		all: (font-size: 0.8125rem, line-height: 0.9375rem)
+		all: (font-size: $o-type-font-size-sm, line-height: 0.9375rem)
 	),
 	large: (
-		all: (font-size: 1rem, line-height: 1.125rem)
+		all: (font-size: $o-type-font-size-lg, line-height: 1.125rem)
 	),
 	bold: (
-		all: (font-weight: bold, font-size: 0.875rem, line-height: 1rem)
+		all: (font-weight: bold, font-size: $o-type-font-size-default, line-height: 1rem)
 	),
 	secondary: (
-		all: (color: #676767)
+		all: (color: $o-type-secondary-text-color)
 	)
 );
 
@@ -84,11 +93,58 @@ $o-type-copy-font-props: (
 	)
 );
 
+// Inline text
+$o-type-small-font-props: (
+	default: (
+		all: (font-weight: normal, font-size: $o-type-font-size-default * 0.9, line-height: 1rem)
+	)
+);
+
+$o-type-mark-font-props: (
+	default: (
+		all: (background-color: #fdec2e)
+	)
+);
+
+$o-type-strikethrough-font-props: (
+	default: (
+		all: (color: $o-type-secondary-text-color)
+	)
+);
+
+$o-type-insert-font-props: (
+	default: (),
+	before: (
+		all: (content: '+')
+	),
+	after: (
+		all: (content: '+')
+	)
+);
+
+$o-type-subscript-font-props: (
+	default: (
+		all: (position: relative, vertical-align: baseline, top: 0.2em, font-size: 90%)
+	)
+);
+
+$o-type-superscript-font-props: (
+	default: (
+		all: (position: relative, vertical-align: baseline, top: -0.2em, font-size: 90%)
+	)
+);
+
 // All font properties
 $o-type-font-props: (
 	link: $o-type-link-font-props,
 	title: $o-type-title-font-props,
 	label: $o-type-label-font-props,
 	lead: $o-type-lead-font-props,
-	copy: $o-type-copy-font-props
+	copy: $o-type-copy-font-props,
+	small: $o-type-small-font-props,
+	mark: $o-type-mark-font-props,
+	strikethrough: $o-type-strikethrough-font-props,
+	insert: $o-type-insert-font-props,
+	subscript: $o-type-subscript-font-props,
+	superscript: $o-type-superscript-font-props
 );

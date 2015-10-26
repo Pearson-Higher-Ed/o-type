@@ -1,9 +1,12 @@
 @mixin o-type-make-selector($element, $modifier) {
-	$_states: (hover, focus, active, visited);
+	$_state: (hover, focus, active, visited);
+	$_pseudo-element: (before, after);
 	$_modifier-formatted: null;
 
-	@if index($_states, $modifier) {
+	@if index($_state, $modifier) {
 		$_modifier-formatted: ":#{$modifier}";
+	} @else if index($_pseudo-element, $modifier) {
+		$_modifier-formatted: "::#{$modifier}";
 	} @else {
 		$_modifier-formatted: if($modifier != default, --#{$modifier}, null);
 	}
@@ -17,6 +20,17 @@
 	@each $_element, $_props-map in $o-type-font-props {
 		@each $_modifier, $_props in $_props-map {
 			@include o-type-make-selector($_element, $_modifier);
+		}
+	}
+
+	// Inverse labels
+	.o-type__label--inverse {
+		&.o-type__label {
+			color: $o-type-text-color-inverse;
+		}
+
+		&.o-type__label--secondary {
+			color: $o-type-secondary-text-color-inverse;
 		}
 	}
 }

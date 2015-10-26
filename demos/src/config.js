@@ -27,7 +27,7 @@ module.exports = {
 		},
 		{
 			name: 'inline',
-			template: 'demos/src/labels.mustache',
+			template: 'demos/src/inline.mustache',
 			description: 'Inline text elements'
 		},
 		{

@@ -30,4 +30,37 @@
 	p {
 		@include o-type-font(copy);
 	}
+
+	// Inline text
+
+	small {
+		@include o-type-font(small);
+	}
+
+	mark {
+		@include o-type-font(mark);
+	}
+
+	s,
+	del {
+		@include o-type-font(strikethrough);
+	}
+
+	ins {
+		&::before {
+			@include o-type-font(insert, before);
+		}
+
+		&::after {
+			@include o-type-font(insert, after);
+		}
+	}
+
+	sub {
+		@include o-type-font(subscript);
+	}
+
+	sup {
+		@include o-type-font(superscript);
+	}
 }
