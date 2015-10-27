@@ -1,3 +1,37 @@
+@mixin o-type-text($element, $modifier: default) {
+	$element: map-get($o-type-text-props, $element);
+	$_text-props: map-get($element, $modifier);
+	$_shared-props: ();
+	$_is-responsive: true;
+
+	@if map-has-key($_text-props, all) and length(map-keys($_text-props)) == 1 {
+		$_is-responsive: false;
+	}
+
+	@each $_breakpoint, $_props in $_text-props {
+		@if $_breakpoint == all {
+			$_shared-props: $_props;
+
+			@if not $_is-responsive {
+				@include o-type-text-props($_props);
+			}
+		} @else if $_breakpoint == xs {
+			$_props: map-merge($_shared-props, $_props);
+			@include o-type-text-props($_props);
+		} @else {
+			@include o-responsive-breakpoint($_breakpoint) {
+				@include o-type-text-props($_props);
+			}
+		}
+	}
+}
+
+@mixin o-type-text-props($props) {
+	@each $_prop, $_value in $props {
+		#{$_prop}: $_value;
+	}
+}
+
 @mixin o-type-make-selector($element, $modifier) {
 	$_state: (hover, focus, active, visited);
 	$_pseudo-element: (before, after);
@@ -12,12 +46,12 @@
 	}
 
 	.o-type__#{$element}#{$_modifier-formatted} {
-		@include o-type-font($element, $modifier);
+		@include o-type-text($element, $modifier);
 	}
 }
 
 @if not $o-type-is-silent {
-	@each $_element, $_props-map in $o-type-font-props {
+	@each $_element, $_props-map in $o-type-text-props {
 		@each $_modifier, $_props in $_props-map {
 			@include o-type-make-selector($_element, $_modifier);
 		}

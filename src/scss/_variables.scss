@@ -25,7 +25,7 @@ $o-type-secondary-text-color-inverse: #aeaeae !default;
 
 
 // Links
-$o-type-link-font-props: (
+$o-type-link-text-props: (
 	default: (
 		all: (color: #0d65a6, text-decoration: underline)
 	),
@@ -41,7 +41,7 @@ $o-type-link-font-props: (
 );
 
 // Titles
-$o-type-title-font-props: (
+$o-type-title-text-props: (
 	default: (
 		all: (color: $o-type-text-color, font-weight: bold),
 		xs: (font-size: 1.375rem, line-height: 1.75rem),
@@ -58,7 +58,7 @@ $o-type-title-font-props: (
 );
 
 // Labels
-$o-type-label-font-props: (
+$o-type-label-text-props: (
 	default: (
 		all: (color: $o-type-text-color, font-weight: normal, font-size: $o-type-font-size-default, line-height: 1rem)
 	),
@@ -77,7 +77,7 @@ $o-type-label-font-props: (
 );
 
 // Leads
-$o-type-lead-font-props: (
+$o-type-lead-text-props: (
 	default: (
 		all: (color: #231f20, font-weight: 200, font-size: 1.25rem, line-height: 1.75rem)
 	),
@@ -87,32 +87,32 @@ $o-type-lead-font-props: (
 );
 
 // Copy
-$o-type-copy-font-props: (
+$o-type-copy-text-props: (
 	default: (
 		all: (color: #231f20, font-size: 1rem, line-height: 1.375rem)
 	)
 );
 
 // Inline text
-$o-type-small-font-props: (
+$o-type-small-text-props: (
 	default: (
 		all: (font-weight: normal, font-size: $o-type-font-size-default * 0.9, line-height: 1rem)
 	)
 );
 
-$o-type-mark-font-props: (
+$o-type-mark-text-props: (
 	default: (
 		all: (background-color: #fdec2e)
 	)
 );
 
-$o-type-strikethrough-font-props: (
+$o-type-strikethrough-text-props: (
 	default: (
 		all: (color: $o-type-secondary-text-color)
 	)
 );
 
-$o-type-insert-font-props: (
+$o-type-insert-text-props: (
 	default: (),
 	before: (
 		all: (content: '+')
@@ -122,29 +122,29 @@ $o-type-insert-font-props: (
 	)
 );
 
-$o-type-subscript-font-props: (
+$o-type-subscript-text-props: (
 	default: (
 		all: (position: relative, vertical-align: baseline, top: 0.2em, font-size: 90%)
 	)
 );
 
-$o-type-superscript-font-props: (
+$o-type-superscript-text-props: (
 	default: (
 		all: (position: relative, vertical-align: baseline, top: -0.2em, font-size: 90%)
 	)
 );
 
 // All font properties
-$o-type-font-props: (
-	link: $o-type-link-font-props,
-	title: $o-type-title-font-props,
-	label: $o-type-label-font-props,
-	lead: $o-type-lead-font-props,
-	copy: $o-type-copy-font-props,
-	small: $o-type-small-font-props,
-	mark: $o-type-mark-font-props,
-	strikethrough: $o-type-strikethrough-font-props,
-	insert: $o-type-insert-font-props,
-	subscript: $o-type-subscript-font-props,
-	superscript: $o-type-superscript-font-props
+$o-type-text-props: (
+	link: $o-type-link-text-props,
+	title: $o-type-title-text-props,
+	label: $o-type-label-text-props,
+	lead: $o-type-lead-text-props,
+	copy: $o-type-copy-text-props,
+	small: $o-type-small-text-props,
+	mark: $o-type-mark-text-props,
+	strikethrough: $o-type-strikethrough-text-props,
+	insert: $o-type-insert-text-props,
+	subscript: $o-type-subscript-text-props,
+	superscript: $o-type-superscript-text-props
 );
