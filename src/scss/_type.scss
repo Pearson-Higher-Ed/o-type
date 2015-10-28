@@ -63,6 +63,10 @@
 			color: $o-type-text-color-inverse;
 		}
 
+		&.o-type__label:not(.o-type__label--bold):not(.o-type__label--small) {
+			font-weight: 300;
+		}
+
 		&.o-type__label--secondary {
 			color: $o-type-secondary-text-color-inverse;
 		}

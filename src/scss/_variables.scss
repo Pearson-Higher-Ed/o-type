@@ -23,7 +23,6 @@ $o-type-text-color-inverse: #ffffff !default;
 $o-type-secondary-text-color: #676767 !default;
 $o-type-secondary-text-color-inverse: #aeaeae !default;
 
-
 // Links
 $o-type-link-text-props: (
 	default: (
@@ -43,17 +42,22 @@ $o-type-link-text-props: (
 // Titles
 $o-type-title-text-props: (
 	default: (
-		all: (color: $o-type-text-color, font-weight: bold),
-		xs: (font-size: 1.375rem, line-height: 1.75rem),
-		sm: (font-size: 1.125rem, line-height: 1.375rem)
+		all: (
+			color: $o-type-text-color,
+			font-weight: normal,
+			-webkit-font-smoothing: antialiased,
+			-moz-osx-font-smoothing: grayscale
+		),
+		xs: (font-size: 1.125rem, line-height: 1.375rem),
+		sm: (font-size: 1.375rem, line-height: 1.75rem)
 	),
 	large: (
-		xs: (font-size: 1.5rem, line-height: 1.875rem),
-		sm: (font-size: 1.25rem, line-height: 1.5rem)
+		xs: (font-size: 1.25rem, line-height: 1.5rem),
+		sm: (font-size: 1.5rem, line-height: 1.875rem)
 	),
 	extra-large: (
-		xs: (font-size: 1.875rem, line-height: 2.25rem),
-		sm: (font-size: 1.375rem, line-height: 1.75rem)
+		xs: (font-size: 1.375rem, line-height: 1.75rem),
+		sm: (font-size: 1.875rem, line-height: 2.25rem)
 	)
 );
 
@@ -79,10 +83,15 @@ $o-type-label-text-props: (
 // Leads
 $o-type-lead-text-props: (
 	default: (
-		all: (color: #231f20, font-weight: 200, font-size: 1.25rem, line-height: 1.75rem)
+		all: (
+			color: #231f20,
+			font-weight: 300,
+			font-size: 1.25rem,
+			line-height: 1.75rem
+		)
 	),
 	small: (
-		all: (font-size: 1.125rem, line-height: 1.5rem)
+		all: (font-size: 1.125rem, font-weight: 200, line-height: 1.5rem)
 	)
 );
 
@@ -96,7 +105,7 @@ $o-type-copy-text-props: (
 // Inline text
 $o-type-small-text-props: (
 	default: (
-		all: (font-weight: normal, font-size: $o-type-font-size-default * 0.9, line-height: 1rem)
+		all: (font-weight: normal, font-size: inherit, line-height: 1rem)
 	)
 );
 
