@@ -85,13 +85,17 @@ $o-type-lead-text-props: (
 	default: (
 		all: (
 			color: #231f20,
+		),
+		xs: (
+			font-weight: 200,
+			font-size: 1.125rem,
+			line-height: 1.5rem
+		),
+		sm: (
 			font-weight: 300,
 			font-size: 1.25rem,
 			line-height: 1.75rem
 		)
-	),
-	small: (
-		all: (font-size: 1.125rem, font-weight: 200, line-height: 1.5rem)
 	)
 );
 
