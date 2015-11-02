@@ -4,11 +4,6 @@ $o-responsive-is-silent: true;
 
 // Internal
 @import 'src/scss/variables';
-@import 'src/scss/mixins';
 @import 'src/scss/fonts';
-@import 'src/scss/scaffolding';
 @import 'src/scss/type';
-
-@if not $o-type-is-silent {
-	@include oTypeHello(world of Origami);
-}
+@import 'src/scss/scaffolding';

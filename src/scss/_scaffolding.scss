@@ -10,24 +10,57 @@
 	// Links
 
 	a {
-		@include o-type-font(link);
+		@include o-type-text(link);
 
 		&:hover,
 		&:active,
 		&:focus {
-			@include o-type-font(link, hover);
+			@include o-type-text(link, hover);
 		}
 	}
 
 	// Labels
 
 	label {
-		@include o-type-font(label);
+		@include o-type-text(label);
 	}
 
 	// Body copy
 
 	p {
-		@include o-type-font(copy);
+		@include o-type-text(copy);
+	}
+
+	// Inline text
+
+	small {
+		@include o-type-text(small);
+	}
+
+	mark {
+		@include o-type-text(mark);
+	}
+
+	s,
+	del {
+		@include o-type-text(strikethrough);
+	}
+
+	ins {
+		&::before {
+			@include o-type-text(insert, before);
+		}
+
+		&::after {
+			@include o-type-text(insert, after);
+		}
+	}
+
+	sub {
+		@include o-type-text(subscript);
+	}
+
+	sup {
+		@include o-type-text(superscript);
 	}
 }
